@@ -1,0 +1,18 @@
+{
+  "short_name": "Unbroken",
+  "name": "Unbroken Habit Tracker",
+  "description": "Master your consistency. Track, analyze, and build unbroken habits month by month.",
+  "icons": [
+    {
+      "src": "unbroken_icon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#4f46e5",
+  "background_color": "#f8fafc",
+  "orientation": "portrait-primary"
+}
