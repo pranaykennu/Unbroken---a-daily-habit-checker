@@ -1,0 +1,8 @@
+{
+  "name": "Unbroken",
+  "description": "Master your consistency. Track, analyze, and build unbreakable habits month by month.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

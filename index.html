@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unbroken | Premium Habit Tracker Dashboard</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Master your consistency. Track, analyze, and build unbreakable habits month by month with Unbroken, the premium local-first habit tracker." />
+    <meta name="keywords" content="habit tracker, atomic habits, consistency tracker, calendar grid, linear regression forecast, daily tracker, progress dashboard" />
+    
+    <!-- Mobile PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#4f46e5" />
+    <link rel="apple-touch-icon" href="/unbroken_icon.png" />
+    
+    <!-- Web Manifest -->
+    <link rel="manifest" href="./manifest.json" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Register Service Worker for Offline Use -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then((reg) => console.log('Service Worker registered successfully:', reg.scope))
+            .catch((err) => console.error('Service Worker registration failed:', err));
+        });
+      }
+    </script>
+  </body>
+</html>

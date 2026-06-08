@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom styles for grid horizontal scroll if needed */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Theme variables definition */
+:root {
+  --app-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-bg: #f5f3ff;
+  --primary-border: #e0e7ff;
+  --primary-text: #4f46e5;
+  --panel-bg: #f8fafc;
+  --grid-header: #f1f5f9;
+}
+
+.theme-classic-indigo {
+  --app-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-bg: #f5f3ff;
+  --primary-border: #e0e7ff;
+  --primary-text: #4f46e5;
+  --panel-bg: #f8fafc;
+  --grid-header: #f1f5f9;
+}
+
+.theme-emerald-forest {
+  --app-bg: #f0fdf4;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --text-main: #064e3b;
+  --text-muted: #15803d;
+  --primary: #059669;
+  --primary-hover: #047857;
+  --primary-bg: #ecfdf5;
+  --primary-border: #a7f3d0;
+  --primary-text: #059669;
+  --panel-bg: #f0fdf4;
+  --grid-header: #d1fae5;
+}
+
+.theme-sunset-glow {
+  --app-bg: #fff7ed;
+  --card-bg: #ffffff;
+  --card-border: #ffedd5;
+  --text-main: #7c2d12;
+  --text-muted: #b45309;
+  --primary: #ea580c;
+  --primary-hover: #d97706;
+  --primary-bg: #fff7ed;
+  --primary-border: #fed7aa;
+  --primary-text: #ea580c;
+  --panel-bg: #fff7ed;
+  --grid-header: #ffedd5;
+}
+
+.theme-cyberpunk-neon {
+  --app-bg: #0f172a;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary: #ec4899;
+  --primary-hover: #db2777;
+  --primary-bg: #1e1b4b;
+  --primary-border: #312e81;
+  --primary-text: #f472b6;
+  --panel-bg: #0f172a;
+  --grid-header: #1e1b4b;
+}
+
+.theme-midnight-dark {
+  --app-bg: #090d16;
+  --card-bg: #111827;
+  --card-border: #1f2937;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-bg: #1e1b4b;
+  --primary-border: #312e81;
+  --primary-text: #818cf8;
+  --panel-bg: #0b0f19;
+  --grid-header: #1f2937;
+}
+
+/* Theme Injector CSS Overrides */
+.theme-classic-indigo,
+.theme-emerald-forest,
+.theme-sunset-glow,
+.theme-cyberpunk-neon,
+.theme-midnight-dark {
+  transition: all 0.3s ease;
+
+  /* Accent overrides */
+  .bg-indigo-600 {
+    background-color: var(--primary) !important;
+  }
+  .hover\:bg-indigo-700:hover {
+    background-color: var(--primary-hover) !important;
+  }
+  .text-indigo-600, .text-indigo-700 {
+    color: var(--primary-text) !important;
+  }
+  .bg-indigo-50 {
+    background-color: var(--primary-bg) !important;
+  }
+  .border-indigo-100 {
+    border-color: var(--primary-border) !important;
+  }
+}
+
+/* Dark theme overrides specifically for cyberpunk and midnight */
+.theme-cyberpunk-neon,
+.theme-midnight-dark {
+  /* Scrollbar override for dark theme */
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #475569;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+
+  .bg-white {
+    background-color: var(--card-bg) !important;
+  }
+  .border-slate-200, .border-slate-100, .border-slate-200\/80 {
+    border-color: var(--card-border) !important;
+  }
+  .text-slate-800, .text-slate-700, .text-slate-600, .text-slate-650 {
+    color: var(--text-main) !important;
+  }
+  .text-slate-400, .text-slate-500, .text-slate-450 {
+    color: var(--text-muted) !important;
+  }
+  .bg-slate-50, .bg-slate-50\/50, .bg-slate-50\/20, .bg-slate-100, .bg-slate-100\/70 {
+    background-color: var(--panel-bg) !important;
+  }
+  
+  /* Spreadsheet Grid Styles */
+  table {
+    border-color: var(--card-border) !important;
+  }
+  tr, td, th {
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    color: var(--text-main) !important;
+  }
+  thead tr {
+    background-color: var(--panel-bg) !important;
+  }
+  thead th {
+    background-color: var(--panel-bg) !important;
+    border-color: var(--card-border) !important;
+  }
+  
+  /* Reset defaults / standard outline buttons */
+  .bg-white.border.border-slate-200 {
+    background-color: var(--card-bg) !important;
+    color: var(--text-main) !important;
+    border-color: var(--card-border) !important;
+    &:hover {
+      background-color: var(--panel-bg) !important;
+    }
+  }
+
+  /* Dropdown selects and text inputs */
+  select, input {
+    background-color: var(--card-bg) !important;
+    color: var(--text-main) !important;
+    border-color: var(--card-border) !important;
+    option {
+      background-color: var(--card-bg) !important;
+      color: var(--text-main) !important;
+    }
+  }
+
+  /* Weekly progress bars background */
+  .recharts-cartesian-grid-horizontal line {
+    stroke: var(--card-border) !important;
+  }
+  .bg-slate-200 {
+    background-color: #334155 !important;
+  }
+}
